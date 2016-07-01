@@ -1,0 +1,95 @@
+/* Imports */
+@import 'https://fonts.googleapis.com/css?family=Ubuntu:700';
+@import 'https://fonts.googleapis.com/css?family=Lalezar';
+
+body {
+  background-image: url(../static/img/background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.main-content {
+  /* Positioning */
+  width: 600px;
+  height: 300px;
+  position: absolute; 
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  /* Display & Box Model */
+  box-sizing: border-box;
+  border-radius: 20px;
+  padding: 20px;
+
+  /* Others */
+  background-color: #fff;
+}
+
+.img-profile {
+  /* Positioning */
+  float: left;  
+  width: 47%;
+  
+  /* Display & Box Model */
+  border-radius: 50%;
+  
+  /* Others */
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+  transition: ease-in 300ms;
+}
+
+.img-profile:hover {
+  -webkit-filter: grayscale(0);
+  filter: grayscale(0);
+}
+
+.title {
+  /* Postitioning */
+  text-align: center;  
+
+  /* Box model & Display */
+  margin: 0;
+
+  /* Others */
+  font-family: 'Lalezar', cursive;
+  font-size: 40px;
+  letter-spacing: 1px;
+}
+
+.about {
+  /* Postitioning */
+  text-align: center;  
+
+  /* Box model & Display */
+  margin: 0;
+
+  /* Others */
+  font-family: 'Ubuntu', sans-serif;
+}
+
+#links {
+  transform: translate(18%, 100%); 
+}
+
+#links li {
+  /* Box model & Display */
+  display: inline;
+  margin-left: 10px;  
+ 
+  /* Others */
+  font-family: 'Ubuntu', sans-serif; 
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+#links li a {
+  color: #000;
+  transition: ease-in-out 300ms;
+}
+
+#links li a:hover {
+  color: #01816D;
+  text-decoration: none;
+}
