@@ -35,14 +35,14 @@ body {
   border-radius: 50%;
   
   /* Others */
-  -webkit-filter: grayscale(100%);
-  filter: grayscale(100%);
+  -webkit-filter: grayscale(0);
+  filter: grayscale(0);
   transition: ease-in 300ms;
 }
 
 .img-profile:hover {
-  -webkit-filter: grayscale(0);
-  filter: grayscale(0);
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
 }
 
 .title {
