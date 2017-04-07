@@ -21,7 +21,6 @@ $color_tapa_approx: #737373;
 //fonts
 $font_0: Raleway;
 $font_1: sans-serif;
-$font_2: sans-serif letter-spacing: 5px;
 $font_3: Source Sans Pro;
 $font_4: Merriweather Sans;
 $font_5: Work Sans;
@@ -48,7 +47,7 @@ $url_0: url(http://ismaelezequiel.github.io/static/img/background.jpg);
 	letter-spacing: 5px;
 }
 :-moz-placeholder {
-	font-family: $font_0, $font_2;
+	font-family: $font_0, $font_1;
 }
 img {
 	width: 100%;
