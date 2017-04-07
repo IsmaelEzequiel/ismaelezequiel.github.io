@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width">
+  <meta name="viewport" content="width=device-width; initial-scale=1.0">
   <title>Ismael Ezequiel</title>
   <link rel="stylesheet" href="css/main.css">
 
@@ -11,23 +11,151 @@
   <!-- end external CDN files -->
 </head>
 <body>
-  <div id="main-content">
-    <nav class="menu">
-      <div class="menu-content">
-        <ul>
-          <li><a href="#">portfólio</a></li>
-          <li><a href="#">contact</a></li>
-          <li><a href="#">blog</a></li>
-          <li><a href="#">about</a></li>
-        </ul>
-      </div>
+  <div class="main-content">
+  <section class="cd-section home-screen" id="top">
+    <nav class="navegation-static">
+      <ul class="menu">
+        <a href="#top"><span class="logo">#IE</span></a>
+        <li><a href="#about">about</a></li>
+        <li><a href="#portfolio">portfólio</a></li>
+        <li><a href="#contact">contact</a></li>
+      </ul>
     </nav>
     <div class="content">
-      <p>ismael ezequiel.</p>
-      <p>passionate about web development.</p>
-      <span class="square"></span>
-    </div>  
-    <i class="fa roll-button">&#xf107;</i>
-  </div>
+      <p>Ismael Ezequiel</p>
+      <p>Passionate about Web Development</p>
+    </div>
+    <i class="fa roll-button"><a href="#about">&#xf107;</a></i>
+  </section>
+  <section class="cd-section about" id="about">
+    <img src="https://raw.githubusercontent.com/IsmaelEzequiel/FCC-Projects/master/Portfolio/img/profile-1.jpg" alt="">
+    <div class="about-photo"></div>
+	    <h1>about me</h1>
+        <div class="box-line line-about"></div>
+    <div class="about-text">
+      <p>I'm Ismael Ezequiel! A Brazilian younger that is passionate about web development, both Back-end and Front-end. Nice to meet you. (:</p>
+   </div>
+  </section>
+  <section class="cd-section portfolio" id="portfolio">
+    <h1>Portfólio</h1>
+    <div class="box-line"></div>
+    <div class="box-portfolio">
+        <div class="box box-1">
+        <img src="http://lorempixel.com/400/400/" alt="">
+      </div>
+      <div class="box box-2">
+        <img src="http://lorempixel.com/400/400/" alt="">
+      </div>
+      <div class="box box-3">
+        <img src="http://lorempixel.com/400/400/" alt="">
+      </div>
+      <div class="box box-4">
+        <img src="http://lorempixel.com/400/400/" alt="">
+      </div>
+      <div class="box box-5">
+        <img src="http://lorempixel.com/400/400/" alt="">
+      </div>
+      <div class="box box-6">
+        <img src="http://lorempixel.com/400/400/" alt="">
+      </div>
+    </div>
+  </section>
+  <section class="cd-section contact" id="contact">
+    <h1>Contact</h1>
+    <div class="box-line"></div>
+    <div class="content-contact">
+    <div class="form">
+    <form action="#">
+      <div class="form-attr">
+        <input type="text" placeholder="Your name" />
+      </div>
+      <div class="form-attr">
+        <input type="email" placeholder="Your email"/>
+      </div>
+      <div class="form-attr">
+        <textarea name="" id="" cols="30" rows="10" placeholder="Don't by shy, say me Hello (:"></textarea>
+      </div>
+      <div class="form-attr">
+        <button type="button">Get in touch</button>
+      </div>
+    </form>
+    <div class="get-in-touch">
+      <p>say me "Hello'. I'll be happy to talk to you.</p>
+    </div>
+    </div>
+    </div>
+  </section>
+  <section class="cd-section social-media">
+    <div class="content-social">
+    <div class="about-page">
+      <h3>About this page</h3>
+      <p>Made with <i>&hearts;</i></p>
+      <p>By Ismael Ezequiel</p>
+    </div>
+    <div class="social-media-button">
+      <ul>
+        <li><a class="linkedin" href=""><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+        <li><a class="github" href=""><i class="fa fa-github" aria-hidden="true"></i>
+</a></li>
+        <li><a class="facebook" href=""><i class="fa fa-facebook"
+        aria-hidden="true"></i>
+        </a></li>
+        <li><a class="twitter" href=""><i class="fa fa-twitter" aria-hidden="true"></i>
+</a></li>
+      </ul>
+    </div>
+    </div>
+  </section>
+  <footer class="footer">
+    <p>Ismael Ezequiel © 2016. All Rights Reversed </p>
+  </footer>
+</div>
+
+<script>
+    $(document).ready(function(){
+    $("a").on('click', function(event) {
+
+      if (this.hash !== "") {
+        event.preventDefault();
+        var hash = this.hash;
+        $('html, body').animate({
+          scrollTop: $(hash).offset().top
+        }, 800, function(){
+          window.location.hash = hash;
+        });
+      }
+    });
+  });
+
+  jQuery("document").ready(function($){
+    var pos = $('.navegation-static').offset().top;
+    var nav = $('.navegation-static');
+
+      $(window).scroll(function () {
+        if ($(this).scrollTop() > pos) {
+        nav.removeClass("navegation-static");
+        nav.addClass("navegation-static-scroll");
+      } else {
+        nav.removeClass("navegation-static-scroll");
+        nav.addClass("navegation-static");
+      }
+    });
+  });
+
+  jQuery("document").ready(function($){
+    var pos = $('.logo').offset().top;
+    var nav = $('.logo');
+
+      $(window).scroll(function () {
+        if ($(this).scrollTop() > pos) {
+        nav.removeClass("logo");
+        nav.addClass("logo-scroll");
+      } else {
+        nav.removeClass("logo-scroll");
+        nav.addClass("logo");
+      }
+    });
+  });
+</script>
 </body>
 </html>

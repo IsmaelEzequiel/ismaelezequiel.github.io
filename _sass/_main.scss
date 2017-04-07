@@ -1,84 +1,380 @@
 /* Imports */
 @import url(https://fonts.googleapis.com/css?family=Work+Sans:300);
-@import
-url(https://fonts.googleapis.com/css?family=Merriweather+Sans:800);
+@import url(https://fonts.googleapis.com/css?family=Anton);
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:200);
+@import url(https://fonts.googleapis.com/css?family=Merriweather+Sans:800);
+@import url(https://fonts.googleapis.com/css?family=Noto+Sans);
+@import url(https://fonts.googleapis.com/css?family=Raleway);
 
-// Colors
+//colors
+$white: #fff;
+$color_alto_approx: #d9d9d9;
 $black: #000;
+$color_havelock_blue_approx: #4b92db;
+$white_70: rgba(255, 255, 255, .7);
+$white_50: rgba(255,255,255,.5);
+$color_wild_sand_approx: #f5f5f5;
+$color_silver_approx: #bfbfbf;
+$color_mercury_approx: #e6e6e6;
+$color_tapa_approx: #737373;
 
+//fonts
+$font_0: Raleway;
+$font_1: sans-serif;
+$font_2: sans-serif letter-spacing: 5px;
+$font_3: Source Sans Pro;
+$font_4: Merriweather Sans;
+$font_5: Work Sans;
+$font_6: Noto Sans;
+
+//urls
+$url_0: url(http://ismaelezequiel.github.io/static/img/background.jpg);
+
+* {
+	margin: 0;
+	//Instead of the line below you could use @include box-sizing($bs)
+	box-sizing: border-box;
+}
+::-webkit-input-placeholder {
+	font-family: $font_0, $font_1;
+	letter-spacing: 5px;
+}
+::-moz-placeholder {
+	font-family: $font_0, $font_1;
+	letter-spacing: 5px;
+}
+:-ms-input-placeholder {
+	font-family: $font_0, $font_1;
+	letter-spacing: 5px;
+}
+:-moz-placeholder {
+	font-family: $font_0, $font_2;
+}
+img {
+	width: 100%;
+}
 body {
-  background-image: url(../static/img/background.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
+	font-size: 16px;
+	background-image: $url_0;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
 }
-
-/* MENU */
-.menu-content ul {
-  text-align: center;
-
-  li {
-    display: inline-block;
-    margin: 40px 30px;
-    text-transform: uppercase;
-  
-    a {
-      font-family: 'Work Sans', sans-serif;
-      text-decoration: none;
-      letter-spacing: 8px;
-      color: $black;
-      transition: ease-in-out 0.4s;
-
-      &:hover {
-        color: #3399ff;
-      }
-    }
-  }
+.box-line {
+	width: 100%;
+	height: 2px;
+	background-color: $white;
+	background-image: linear-gradient(to left, $white, $color_alto_approx, $white);
+	background-size: 100% 2px;
+	background-repeat: no-repeat;
+	background-position: 50%;
 }
-/* END MENU */
-
-/* CONTENT */
-.main-content {
-  position: relative;
+h1 {
+	text-align: center;
+	padding: 70px 0 10px;
+	text-transform: uppercase;
+	font-family: $font_3, $font_1;
 }
-
-.content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); 
-  width: 80%;
-
-  p:nth-child(1) {
-    opacity: 0.8;
-    padding-top: 50px;
-    text-align: center;
-    font-size: 90px;
-    font-family: 'Merriweather Sans', sans-serif;
-    text-transform: capitalize;
-    line-height: 80px;
-  }
-
-  p:nth-child(2) {
-    font-family: 'Work Sans', sans-serif;
-    text-transform: uppercase;
-    padding-left: 170px;
-    letter-spacing: 5px;
-  }
-  span {
-    display: block;
-    margin: auto;
-    background-color: $black;
-    margin-top: 40px;
-    width: 30px;
-    height: 10px;
-  }
+.home-screen {
+	width: 100%;
+	height: 100vh;
+	background-repeat: no-repeat;
+	background-size: cover;
+	.content {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+		transform: translate(-50%, -50%);
+		p {
+			&:first-child {
+				margin-bottom: 0;
+				font-family: $font_4, $font_1;
+				font-size: 450%;
+				//Instead of the line below you could use @include text-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+				text-shadow: 3px 3px 1px $white_70;
+				line-height: 70px;
+			}
+			&:last-child {
+				font-family: $font_5, $font_1;
+				font-size: 70%;
+				text-transform: uppercase;
+				//Instead of the line below you could use @include text-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+				text-shadow: 1px 1px 1px $white_70;
+				letter-spacing: 5px;
+				padding-left: 5px;
+			}
+		}
+	}
+	.fa {
+		font-size: 200%;
+		position: absolute;
+		top: 95%;
+		left: 50%;
+		//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+		transform: translate(-50%, -90%);
+		animation: upper 1s ease-in-out 1s infinite;
+		a {
+			text-decoration: none;
+			//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+			transition: .2s;
+			color: $black;
+			&:hover {
+				color: $white_50;
+			}
+		}
+	}
 }
-
-.roll-button {
-  font-size: 40px !important;
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
+.logo {
+	font-family: $font_3, $font_1;
+	display: inline-block;
+	text-decoration: none;
+	background-color: $white;
+	color: $black;
+	font-weight: bold;
+	//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+	border-radius: 50%;
+	padding: 4px;
+	//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+	transition: .3s ease;
 }
-/* END CONTENT */
+.logo-scroll {
+	font-family: $font_3, $font_1;
+	display: inline-block;
+	text-decoration: none;
+	background-color: $black;
+	color: $white;
+	font-weight: bold;
+	//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+	border-radius: 50%;
+	padding: 4px;
+	//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+	transition: .3s ease;
+}
+@keyframes upper {
+	0% {
+		//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+		transform: translate(-50%, -95%);
+	}
+	100% {
+		//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+		transform: translate(-50%, -40%);
+	}
+}
+.about {
+	height: 700px;
+	background-color: $white;
+	.about-text {
+		position: relative;
+		margin: auto;
+		text-align: center;
+		padding-top: 5%;
+		width: 50%;
+		font-family: $font_6, $font_1;
+	}
+	.about-text::before {
+		content: "Hey,";
+		position: absolute;
+		top: 20px;
+		left: 0;
+		font-size: 200%;
+		font-family: $font_4, $font_1;
+	}
+	img {
+		width: 100%;
+		filter: grayscale(100%);
+	}
+}
+.about-content {
+	padding: 20px;
+	width: 75%;
+	margin: auto;
+}
+.portfolio {
+	clear: both;
+	background-color: $color_wild_sand_approx;
+	.box-portfolio {
+		text-align: center;
+		margin: 5% auto 0 auto;
+		width: 75%;
+		height: 600px;
+		.box {
+			position: relative;
+			filter: grayscale(100%);
+			display: inline-block;
+			width: 25%;
+			height: 40%;
+			//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+			border-radius: 5px;
+			//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+			transition: .3s ease;
+			&:hover {
+				opacity: 0.5;
+			}
+		}
+	}
+	img {
+		height: 100%;
+		//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+		border-radius: 5px;
+	}
+}
+.contact {
+	background-color: $white;
+	width: 100%;
+	height: 500px;
+}
+.content-contact {
+	width: 75%;
+	margin: auto;
+	.form {
+		padding-top: 5%;
+		form {
+			float: left;
+			margin-left: 10%;
+			input {
+				width: 100%;
+				border: 0;
+			}
+			textarea {
+				resize: none;
+				border: 0;
+				width: 100%;
+			}
+		}
+		.form-attr {
+			width: 150%;
+			margin-bottom: 20px;
+			border-bottom: 1px solid $color_silver_approx;
+			&:last-child {
+				border-bottom: 0;
+			}
+			button {
+				font-family: $font_3, $font_1;
+				background-color: $color_mercury_approx;
+				color: $color_tapa_approx;
+				width: 100px;
+				height: 30px;
+				border: 0;
+				//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+				border-radius: 5px;
+				&:hover {
+					background-color: $color_tapa_approx;
+					color: $color_mercury_approx;
+					cursor: pointer;
+				}
+			}
+		}
+	}
+	.get-in-touch {
+		padding-top: 40px;
+		position: relative;
+		float: right;
+		margin-right: 10%;
+		font-family: $font_6, $font_1;
+	}
+	.get-in-touch::before {
+		content: "Hey,";
+		position: absolute;
+		top: 0;
+		left: 0;
+		font-size: 200%;
+		font-family: $font_4, $font_1;
+	}
+}
+.social-media {
+	padding-top: 3%;
+	width: 100%;
+	height: 150px;
+	background-color: $color_wild_sand_approx;
+	.content-social {
+		width: 75%;
+		margin: auto;
+		.about-page {
+			float: left;
+			margin-left: 20%;
+			text-align: center;
+			font-family: $font_6, $font_1;
+			h3 {
+				text-transform: uppercase;
+				font-family: $font_3, $font_1;
+				padding-bottom: 20px;
+			}
+		}
+		.social-media-button {
+			float: right;
+			margin-right: 10%;
+		}
+		ul li {
+			display: inline-block;
+			a {
+				font-size: 25px;
+				margin-left: 10px;
+				color: $black;
+				&:hover {
+					color: $color_tapa_approx;
+				}
+			}
+		}
+	}
+}
+.footer {
+	padding-top: 50px;
+	width: 100%;
+	height: 100px;
+	text-align: center;
+	background-color: $black;
+	color: $white;
+	font-family: $font_3, $font_1;
+}
+.navegation-static .menu {
+	text-align: center;
+	padding-top: 20px;
+	//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+	transition: .3s ease;
+	li {
+		display: inline-block;
+		margin-left: 50px;
+		a {
+			text-decoration: none;
+			text-transform: uppercase;
+			color: $black;
+			font-family: $font_3, $font_1;
+			letter-spacing: 8px;
+			//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+			transition: .3s ease;
+			&:hover {
+				color: $color_havelock_blue_approx;
+			}
+		}
+	}
+}
+.navegation-static-scroll .menu {
+	position: fixed;
+	width: 100%;
+	z-index: 1;
+	text-align: center;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	background-color: $white;
+	opacity: 0.8;
+	//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+	transition: .3s ease;
+	li {
+		display: inline-block;
+		margin-left: 50px;
+		a {
+			text-decoration: none;
+			text-transform: uppercase;
+			font-size: 15px;
+			color: $black;
+			font-family: $font_3, $font_1;
+			letter-spacing: 8px;
+			//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+			transition: .3s ease;
+			&:hover {
+				color: $color_havelock_blue_approx;
+			}
+		}
+	}
+}
